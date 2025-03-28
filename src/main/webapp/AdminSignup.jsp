@@ -11,16 +11,25 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"/>
 <style>
-	
+	 * {
+       
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+     body {
+        
+        background: linear-gradient(100deg, #1e3c72, #2a5298);
+    }
 	div	{
-		border:1px solid black;
+		border:1px solid #9FE2BF;
 		min-height:70vh;
 		width:40%;
 		text-Align:center;
-		background-color:#9FE2BF;
-		border-radius:5px;
+		background-color:#00FF00;
+		border-radius:15px;
 		margin-left:350px;
-		margin-top:100px;
+		margin-top:70px;
+		box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.6);
 	}
 	
 	input[type=submit]{
@@ -33,6 +42,7 @@
 	}
 	input[type=submit]:hover{
 		background-color:darkblue;
+		transform: scale(1.06);
 	}
 	input[type=submit]:active{
 		background-color:red;

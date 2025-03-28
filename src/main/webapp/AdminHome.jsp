@@ -7,8 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="adminhome">
-<h1>Admin Home</h1>
-</form>
+<h1>Admin home</h1>
 </body>
 </html>

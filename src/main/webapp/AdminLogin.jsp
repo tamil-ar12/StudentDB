@@ -1,3 +1,4 @@
+<%@page import="Admin.Login"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -6,16 +7,26 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-	
+	 * {
+       
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+     body {
+        
+        background: linear-gradient(100deg, #1e3c72, #2a5298);
+    }
+    
 	div	{
-		border:1px solid black;
+		border:1px solid #6495ED;
 		height:50vh;
 		width:40%;
 		text-Align:center;
-		background-color:#6495ED;
-		border-radius:5px;
+		background-color:#40E0D0;
+		border-radius:15px;
 		margin-left:350px;
 		margin-top:100px;
+		box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.6);
 	}
 	
 	input[type=submit]{
@@ -28,6 +39,8 @@
 	}
 	input[type=submit]:hover{
 		background-color:darkblue;
+		transform: scale(1.06);
+		
 	}
 	input[type=submit]:active{
 		background-color:red;
@@ -63,17 +76,19 @@
 	a:hover{
 	background-color:red;
 	color:white;
+	transform: scale(1.07);
 	}
 </style>
 </head>
 <body>
 	<div>
 	<h1>Admin Login Page</h1>
-	<form action="" method="get">
+	<form action="login" method="get">
 	<label for="aemail">Email:</label>
 	<input type="email" id="aemail" name="email" required><br><br>
 	<label for="apss">Password:</label>
 	<input type="password" id="apass" name="pass" required><br><br>
+	
 	<input type="submit">
 	</form>
 	<span>Not User?</span>

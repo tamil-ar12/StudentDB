@@ -31,6 +31,11 @@
     	<artifactId>servletProject-1</artifactId>
     	<version>0.0.1-SNAPSHOT</version>
     </dependency>
+    <dependency>
+    	<groupId>learn</groupId>
+    	<artifactId>hibernate</artifactId>
+    	<version>0.0.1-SNAPSHOT</version>
+    </dependency>
   </dependencies>
 
   <build>

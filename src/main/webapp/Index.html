@@ -4,34 +4,60 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
+	 * {
+       
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+     body {
+        
+        background: linear-gradient(100deg, #1e3c72, #2a5298);
+    }
+	
 	div{
-		border:1px solid black;
-		height:37vh;
+		height:47vh;
 		width:30%;
 		text-align:center;
-	    padding-top:30px;
-	    border-radius:5px;
+	    padding-top:25px;
+	    border-radius:15px;
+		background: rgba(255, 255, 255, 0.2);	
+		margin-left:450px;
+		margin-top:150px;
+		box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.6);
+	}
+	
+	a{
+	    border:5px solid #e5e7e9;;
+		padding:10px 0px ;
+		width:200px;
+		display:inline-block;
+		border-radius:10px;
+		background-color:#e5e7e9 ;
+		text-decoration:none;
+		color:black;
+		text-align:center;
+		margin-top:20px;
+		font-weight:bold;
+		transition: 0.3s ease-in-out;
 		
 	}
-	a{
-	    border:1px solid black;
-		padding:13px 0px ;
-		width:200px;
+	a:hover{
+	border:5px solid blue;
+	border-radius:10px;
+	color:blue;
+	transform: scale(1.02);
+	}
+	h2{
+	color:white;
 		
-		display:inline-block;
-		border-radius:5px;
-		background-color:blue;
-		text-decoration:none;
-		color:white;
-		text-align:center;
-		margin-top:30px;
 	}
 </style>
 </head>
 <body>
 	<div>
+	   <h2>Select Login Type</h2>
 	<a href="AdminLogin.jsp">Admin</a>
 	<a href="">Student</a>
 	</div>
 </body>
-</html>
+</html>  
