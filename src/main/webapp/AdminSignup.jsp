@@ -75,8 +75,11 @@
 	input{
 	padding:3px;
 	}
-	h1{
-	 color: #17202a;
+	h2{
+	border-bottom:2px solid black;
+	padding-bottom:10px;
+	border-bottom-right-radius:10px;
+	border-bottom-left-radius:10px;
 	}
 	a{
 	position:absolute;
@@ -110,7 +113,7 @@
 </head>
 <body>
 	<div>
-	<h1>Admin Signup Page</h1>
+	<h2>Admin Signup Page</h2>
 	<form action="adminsignup" method="get" onsubmit="return fun()">
 	<label for="aid">S.id:</label>
 	<input type="number" id="aid" name="id" required><br><br>

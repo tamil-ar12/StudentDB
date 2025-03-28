@@ -54,8 +54,11 @@
 	input{
 	padding:3px;
 	}
-	h1{
-	 color: #17202a;
+	h2{
+	border-bottom:2px solid black;
+	padding-bottom:10px;
+	border-bottom-right-radius:10px;
+	border-bottom-left-radius:10px;
 	}
 	a{
 	border:1px solid black;
@@ -82,7 +85,7 @@
 </head>
 <body>
 	<div>
-	<h1>Admin Login Page</h1>
+	<h2>Admin Login Page</h2>
 	<form action="login" method="get">
 	<label for="aemail">Email:</label>
 	<input type="email" id="aemail" name="email" required><br><br>
