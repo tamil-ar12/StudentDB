@@ -12,6 +12,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import Student.StudentDAO;
 @WebServlet("/login")
 public class Login extends HttpServlet{
 	@Override
@@ -23,11 +25,13 @@ public class Login extends HttpServlet{
 			PrintWriter pw =resp.getWriter();
 			String email=req.getParameter("email");
 			String pass=req.getParameter("pass");
+			StudentDAO dao = new StudentDAO();
 			while(rs.next()) {
 				if(email.equals(rs.getString(1)) && pass.equals(rs.getString(2))) {
+					req.setAttribute("students", dao.getAllStudents() );
 					req.getRequestDispatcher("AdminHome.jsp").include(req, resp);
 				}
-				
+			
 			}
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();

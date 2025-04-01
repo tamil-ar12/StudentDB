@@ -81,25 +81,7 @@
 	border-bottom-right-radius:10px;
 	border-bottom-left-radius:10px;
 	}
-	a{
-	position:absolute;
-	top:90px;
-	left:350px;
-	margin-left:20px;
-	margin-top:20px;
-	text-decoration:none;
-	border-radius:20px;
-	background-color:#999999;
-	display:inline-block;
-	padding:5px;
-	font-size:larger;
-	color:black;
-	width:40px;
-	}
-	a:hover{
-	background-color:#454545;
-	color:white;
-	}
+
 	#eye{
 	display:none
 	

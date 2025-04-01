@@ -34,8 +34,9 @@
 		background-color:blue;
 		width:8pc;
 		border:none;
-		border-radius:5px;
+		border-radius:10px;
 		color:white;
+		font-size:15px;
 	}
 	input[type=submit]:hover{
 		background-color:darkblue;
@@ -61,7 +62,7 @@
 	border-bottom-left-radius:10px;
 	}
 	a{
-	border:1px solid black;
+	
 	margin-left:20px;
 	margin-top:20px;
 	text-decoration:none;
@@ -74,7 +75,7 @@
 	
 	}
 	#aemail{
-		margin-left:28px;
+		margin-left:37px;
 	}
 	a:hover{
 	background-color:red;
