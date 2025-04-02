@@ -16,14 +16,14 @@
         background: linear-gradient(100deg, #1e3c72, #2a5298);
     }
 	div	{
-		border:1px solid black;
 		height:60vh;
 		width:40%;
 		text-Align:center;
-		background-color:orange;
-		border-radius:5px;
+		background-color:#58d68d;
+		border-radius:15px;
 		margin-left:350px;
 		margin-top:100px;
+		 padding-top:7px;
 	}
 	
 	input[type=submit]{
@@ -41,17 +41,17 @@
 		background-color:red;
 	}
 	#sid{
-		margin-left:50px;
+		margin-left:70px;
 	}
 	
 	#sname{
-		margin-left:37px;
+		margin-left:40px;
 	}
 	#sphysics{
-		margin-left:25px;
+		margin-left:20px;
 	}
 	#schemistry{
-		margin-left:6px;
+		margin-left:4px;
 	}
 	#smaths{
 		margin-left:35px;
@@ -64,29 +64,36 @@
 	input{
 	padding:3px;
 	}
-	h1{
+	h2{
 	 color: #17202a;
+	
 	}
 </style>
 </head>
 <body>
-	<div>
-	<h1>Update Student Details</h1>
-	<form action="update" method="get">
-	<label for="sid">S.id:</label>
-	<input type="number" id="sid" name="id" required readonly placeholder="id"><br><br>
-	<label for="sname">Name:</label>
-	<input type="text" id="sname" name="name" required><br><br>
-	<label for="sphysics">Physics:</label>
-	<input type="number" id="sphysics" name="physics" required><br><br>
-	<label for="schemistry">Chemistry:</label>
-	<input type="number" id="schemistry" name="chemistry" required><br><br>
-	<label for="smaths">Maths:</label>
-	<input type="number" id="smaths" name="maths" required><br><br>
-	<input type="submit">
-	
-	</form>
-	</div>
+
+<% StudentDTO s=(StudentDTO)request.getAttribute("student");   
+  %>
+<div>
+<h2> Edit Student</h2>
+    <form action="update" method="get">    
+      <label for="sid">ID :</label>
+     <input type="number" id="sid" name="id" required value="<%= s.getId() %>" readonly><br><br>
+     
+     <label for="sname">Name :</label>
+     <input type="text" id="sname" name="name" required value="<%= s.getName() %>"><br><br>
+     
+     <label for="sphysics">Physics :</label>
+     <input type="number" id="sphysics" name="physics" required value="<%= s.getPhysics()%>"><br><br>
+     
+     <label for="schemistry">chemistry :</label>
+     <input type="number" id="schemistry" name="chemistry" required value="<%= s.getChemistry()%>"><br><br>
+     
+     <label for="smaths">Maths :</label>
+     <input type="number" id="smaths"  name="maths" required value="<%= s.getMaths() %>"><br><br>
+     <input type="submit" value="Submit">
+    </form>
+</div>
 </body>
 </html>
 

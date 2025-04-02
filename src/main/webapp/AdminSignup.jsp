@@ -48,17 +48,17 @@
 		background-color:red;
 	}
 	#aid{
-		margin-left:74px;
+		margin-left:76px;
 	}
 	
 	#aname{
-		margin-left:57px;
+		margin-left:60px;
 	}
 	#acontact{
 		margin-left:45px;
 	}
 	#aemail{
-		margin-left:58px;
+		margin-left:65px;
 	}
 	#apass{
 		margin-left:30px;
@@ -82,35 +82,40 @@
 	border-bottom-left-radius:10px;
 	}
 
-	#eye{
+	/* #eye{
 	display:none
 	
-	}
+	} */
 	#eyehide{
-    margin-left:-33px;
+    margin-left:-28px;
 		
 	}
-	
+	i {
+    position: absolute;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top:3.5px;
+}
 </style>
 </head>
 <body>
 	<div>
 	<h2>Admin Signup Page</h2>
 	<form action="adminsignup" method="get" onsubmit="return fun()">
-	<label for="aid">S.id:</label>
+	<label for="aid">S.id :</label>
 	<input type="number" id="aid" name="id" required><br><br>
-	<label for="aname">Name:</label>
+	<label for="aname">Name :</label>
 	<input type="text" id="aname" name="name" required><br><br>
-	<label for="acontact">Contact:</label>
+	<label for="acontact">Contact :</label>
 	<input type="tel" id="acontact" name="contact" required><br><br>
-	<label for="aemail">Email:</label>
+	<label for="aemail">Email :</label>
 	<input type="email" id="aemail" name="email" required><br><br>
-	<label for="apss">Password:</label>
+	<label for="apss">Password :</label>
 	<input type="password" id="apass" name="pass" required>
-	<i id="eye" class="fa-solid fa-eye" onclick="return fun1()"></i>
-	<i style="" id="eyehide" class="fa-solid fa-eye-slash" onclick="return fun1()"></i>
+	<!-- <i id="eye" class="fa-solid fa-eye" onclick="return fun1()"></i> -->
+	<i id="eyehide" class="fa-solid fa-eye-slash" onclick="return fun1()"></i>
 	<br><br>
-	<label for="arepss">Re-Password:</label>
+	<label for="arepss">Re-Password :</label>
 	<input type="text" id="arepass" name="repass" required><br><br>
 	<input type="submit" >
 	
@@ -130,12 +135,29 @@ function fun(){
 	}
 }
 
+function fun1() {
+  
+    let eyehide = document.getElementById("eyehide");
+
+    if (pass.type === "password") {
+        pass.type = "text";
+        eyehide.classList.remove("fa-eye-slash");  
+        eyehide.classList.add("fa-eye");           
+    } else {
+        pass.type = "password";
+        eyehide.classList.remove("fa-eye");        
+        eyehide.classList.add("fa-eye-slash");   
+    }
+}
+
+/* 
+
 function fun1(){
 	let eye=document.getElementById("eye")
 	let eyehide=document.getElementById("eyehide")
-	eye.style.marginLeft="250px"	
+	eye.style.marginLeft="270px"	
 	eye.style.marginTop="-20px"	
-	eyehide.style.marginLeft="250px"	
+	eyehide.style.marginLeft="270px"	
 	eyehide.style.marginTop="-20px"	
 	if(pass.type=="password"){
 		pass.type="text"
@@ -148,7 +170,7 @@ function fun1(){
 		eye.style.display="none"
 		eyehide.style.display="block"
 	}
-}
+} */
 
 </script>
 </html>

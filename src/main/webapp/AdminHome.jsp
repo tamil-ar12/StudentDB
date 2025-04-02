@@ -18,7 +18,7 @@
         
         background: linear-gradient(100deg, #1e3c72, #2a5298);
     }
-	div	{
+	.container	{
 	min-height:70vh;
 	width:70%;
 	text-Align:center;
@@ -34,7 +34,7 @@
 		border-collapse:collapse;
 		padding:10px 25px 10px 25px;
 		text-align:center;
-		margin-left:40px;
+		margin-left:35px;
 		
 	} 
 	th{
@@ -67,12 +67,15 @@
 	margin-bottom:40px;
 	border-radius:5px;
 	color:black;
-	
+	transition: all 0.3s;
 	}
 	#edit{
 		text-decoration:none;
 		color:green;
 		font-weight:bold;
+		font-size:16px;
+		border:none;
+		background-color:white;
 	}
 	#edit:hover{
 	text-decoration:underline;
@@ -82,6 +85,7 @@
 		text-decoration:none;
 		color:red;
 		font-weight:bold;
+		
 	}
 	#del:hover{
 	text-decoration:underline;
@@ -104,8 +108,8 @@
 </style>
 </head>
 <body>
-<div>
-<h1>Admin home</h1>
+<div class="container">
+<h1>Admin Dashboard</h1>
 <table>
 	<thead>
 		<tr>
@@ -118,25 +122,30 @@
 			<th>Delete</th>
 		</tr>
 	</thead>
-	
-	<% List<StudentDTO> students =(List) request.getAttribute("students"); %>
-	<% for(StudentDTO student: students){ %>
-	
+	<tbody id="studentTable">
+	<% StudentDAO dao = new StudentDAO();
+    List<StudentDTO> studentList = dao.getAllStudents(); %>
+	<% for(StudentDTO student: studentList){ %>
  	<tr>
 	<td><%= student.getId() %></td>
 	<td><%= student.getName() %></td>
 	<td><%= student.getPhysics() %></td>
 	<td><%= student.getChemistry() %></td>
 	<td><%= student.getMaths() %></td>
-	<td><a id="edit" href="update?id=<%= student.getId() %>" onclick="UpdateStudent.jsp">Edit</a></td>
+	<td>
+	 <form action="editstudent" method="get">
+     <input type="hidden" name="id" value="<%= student.getId() %>">
+     <button id="edit">Edit </button>
+     </form>
+	</td>
 	<td><a id="del" href= "delete?id=<%= student.getId() %>" >Delete</a></td>
 	</tr> 
 	
 	<% } %>
-	
+	</tbody>
 </table>
 <a class="btn" id="addst" href="AddStudent.jsp">Add Student</a>
 <a class="btn" id="logout" href="Index.html">Logout</a>
 </div>
 </body>
-</html>
+</html> 

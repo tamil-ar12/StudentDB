@@ -12,28 +12,36 @@ public class UpdateStudent extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //		req.getRequestDispatcher("UpdateStudent.jsp").include(req, resp);
-		  String id = req.getParameter("id");
-		  int id1=Integer.parseInt(id);
-		String name=req.getParameter("name");
-		String physics = req.getParameter("id");
-		String chemistry = req.getParameter("id");
-		String maths = req.getParameter("id");
+		 
+		 System.out.println("update student..");
+		 String id = req.getParameter("id");
+		 String name=req.getParameter("name");
+		 String physics = req.getParameter("physics");
+	   	String chemistry = req.getParameter("chemistry");
+		String maths = req.getParameter("maths");
+		
+		int id1=Integer.parseInt(id);
 		int physics1=Integer.parseInt(physics);
 		int chemistry1=Integer.parseInt(chemistry);
 		int maths1=Integer.parseInt(maths);
+		    
+		
 		StudentDTO sdt=new StudentDTO(id1,name, physics1, chemistry1, maths1);
 		StudentDAO sda=new StudentDAO();
+//		System.out.println(sda);
+		  System.out.println(name);
+		  System.out.println(physics1);
          try {        	 
-           sda.updateStudent(sdt,id1);
-          System.out.println(sdt.getId());
-          System.out.println(sdt.getName());
-           StudentDAO dao = new StudentDAO();	
-           req.setAttribute("students", dao.getAllStudents() );
+          sda.updateStudent(sdt);
+          
+           
+//           StudentDAO dao = new StudentDAO();
+//           System.out.println(dao+"=============");
+//           req.setAttribute("students", dao.getAllStudents() );
            req.getRequestDispatcher("AdminHome.jsp").include(req, resp);
-             
+          
          } catch (Exception e) {
              e.printStackTrace();
          }
-     
 	}
 }
