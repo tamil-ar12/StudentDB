@@ -11,8 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 public class UpdateStudent extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//		req.getRequestDispatcher("UpdateStudent.jsp").include(req, resp);
-		 
 		 System.out.println("update student..");
 		 String id = req.getParameter("id");
 		 String name=req.getParameter("name");
@@ -33,11 +31,6 @@ public class UpdateStudent extends HttpServlet{
 		  System.out.println(physics1);
          try {        	 
           sda.updateStudent(sdt);
-          
-           
-//           StudentDAO dao = new StudentDAO();
-//           System.out.println(dao+"=============");
-//           req.setAttribute("students", dao.getAllStudents() );
            req.getRequestDispatcher("AdminHome.jsp").include(req, resp);
           
          } catch (Exception e) {

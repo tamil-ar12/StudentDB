@@ -1,6 +1,8 @@
+<%@page import="java.sql.ResultSet"%>
 <%@page import="Admin.Login"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import="Student.StudentDTO" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,6 +34,7 @@
 		margin-left:350px;
 		margin-top:100px;
 		box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.6);
+		padding: 20px;
 	}
 	
 	input[type=submit]{
@@ -60,12 +63,12 @@
 	input{
 	padding:3px;
 	}
-	h2{
-	border-bottom:2px solid black;
-	padding-bottom:10px;
-	border-bottom-right-radius:10px;
-	border-bottom-left-radius:10px;
-	}
+	 h2 {
+     border-bottom: 2px solid black;
+     padding-bottom: 10px;
+     margin-bottom: 15px;
+     color:red;
+    }
 	a{
 	
 	margin-left:20px;
@@ -97,6 +100,15 @@ i {
     font-size: 18px;
     margin-top:3.5px;
 }
+#error{
+color:red;
+position:absolute;
+top:215px;
+left:584px;
+font-size:14px;
+font-weight:bold;
+ font-family: "Arial, Helvetica, sans-serif";
+}
 	
 </style>
 </head>
@@ -106,6 +118,10 @@ i {
 	<form action="login" method="get">
 	<label for="aemail">Email :</label>
 	<input type="email" id="aemail" name="email" required><br><br>
+	    <% String error = (String) request.getAttribute("message"); %>
+    <% if (error != null) { %>
+        <p id="error"><%= error %></p>
+    <% } %>
 	<label for="apss">Password :</label>
 	<input type="password" id="apass" name="pass" required>
 	<i id="eyehide" class="fa-solid fa-eye-slash" onclick="return fun1()"></i><br><br>

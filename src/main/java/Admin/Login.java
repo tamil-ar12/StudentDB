@@ -19,20 +19,18 @@ public class Login extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		try {
-			Connection con=AdminDao.getConnection();
-			Statement st=con.createStatement();
-			ResultSet rs=st.executeQuery("select email,pass from admin");
-			PrintWriter pw =resp.getWriter();
 			String email=req.getParameter("email");
 			String pass=req.getParameter("pass");
 			StudentDAO dao = new StudentDAO();
-			while(rs.next()) {
-				if(email.equals(rs.getString(1)) && pass.equals(rs.getString(2))) {
+			boolean bool=AdminDao.login(email,pass);
+				if(bool) {
 					req.setAttribute("students", dao.getAllStudents() );
 					req.getRequestDispatcher("AdminHome.jsp").include(req, resp);
 				}
-			
-			}
+				else {
+					req.setAttribute("message", "Incorrect Password");
+					req.getRequestDispatcher("AdminLogin.jsp").forward(req, resp);
+				}
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}

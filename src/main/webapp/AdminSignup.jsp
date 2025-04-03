@@ -30,6 +30,7 @@
 		margin-left:350px;
 		margin-top:70px;
 		box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.6);
+		padding: 20px;
 	}
 	
 	input[type=submit]{
@@ -75,13 +76,12 @@
 	input{
 	padding:3px;
 	}
-	h2{
-	border-bottom:2px solid black;
-	padding-bottom:10px;
-	border-bottom-right-radius:10px;
-	border-bottom-left-radius:10px;
-	}
-
+	h2 {
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    color:red;
+    }
 	/* #eye{
 	display:none
 	

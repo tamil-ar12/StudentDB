@@ -16,14 +16,16 @@
         background: linear-gradient(100deg, #1e3c72, #2a5298);
     }
 	div	{
-		height:60vh;
+		height:63vh;
 		width:40%;
 		text-Align:center;
-		background-color:#58d68d;
+		background-color:violet;
+		box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.6);
 		border-radius:15px;
 		margin-left:350px;
 		margin-top:100px;
-		 padding-top:7px;
+		padding: 20px;
+		 
 	}
 	
 	input[type=submit]{
@@ -64,9 +66,30 @@
 	input{
 	padding:3px;
 	}
-	h2{
-	 color: #17202a;
-	
+   h1 {
+      border-bottom: 2px solid black;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+      color:yellow;
+    }
+	a{
+	position:absolute;
+	top:90px;
+	left:350px;
+	margin-left:20px;
+	margin-top:20px;
+	text-decoration:none;
+	border-radius:20px;
+	display:inline-block;
+	padding:5px;
+	font-size:larger;
+	width:40px;
+	background-color:#454545;
+	color:white;
+	}
+	a:hover{
+	background-color:#999999;
+	color:black;
 	}
 </style>
 </head>
@@ -75,7 +98,8 @@
 <% StudentDTO s=(StudentDTO)request.getAttribute("student");   
   %>
 <div>
-<h2> Edit Student</h2>
+<a href="AdminHome.jsp"><i class='bx bx-arrow-back'></i></a>
+<h1> Edit Student</h1>
     <form action="update" method="get">    
       <label for="sid">ID :</label>
      <input type="number" id="sid" name="id" required value="<%= s.getId() %>" readonly><br><br>
