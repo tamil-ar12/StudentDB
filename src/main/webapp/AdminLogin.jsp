@@ -103,7 +103,7 @@ i {
 #error{
 color:red;
 position:absolute;
-top:215px;
+top:230px;
 left:584px;
 font-size:14px;
 font-weight:bold;
