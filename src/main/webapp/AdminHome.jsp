@@ -145,7 +145,7 @@
 	</tbody>
 </table>
 <a class="btn" id="addst" href="AddStudent.jsp">Add Student</a>
-<a class="btn" id="logout" href="Index.html">Logout</a>
+<a class="btn" id="logout" href="index.html">Logout</a>
 </div>
 </body>
 </html> 
